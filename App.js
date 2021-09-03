@@ -5,7 +5,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <View style={styles.yellowView}></View>
+      <View style={styles.blueView}></View>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,9 +14,14 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1 // 전체 화면을 사용한다는 뜻 (즉, 비율)
   },
+  yellowView: {
+    flex: 1,
+    backgroundColor: "yellow"
+  },
+  blueView: {
+    flex: 3,
+    backgroundColor: "blue"
+  }
 });
