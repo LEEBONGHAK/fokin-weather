@@ -1,13 +1,17 @@
 import React from "react";
 import { StyleSheet, View, Text } from 'react-native';
 import PropTypes from "prop-types";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function Weather() {
+export default function Weather({ temp }) {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>
-                {temp}
-            </Text>
+            <View style={styles.halfContainer}>
+                <MaterialCommunityIcons size={120} name="weather-lightning-rainy" />
+                <Text style={styles.temp}>{temp}℃</Text>
+            </View>
+            <View style={styles.halfContainer}>
+            </View>
         </View>
     );
 }
@@ -23,8 +27,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    text: {
-        color: '#2c2c2c',
-        fontSize: 30,
+    temp: {
+        fontSize: 42
+    },
+    halfContainer: {
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
     }
 });
